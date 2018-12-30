@@ -1,6 +1,8 @@
-function greet(name, lastName) {
-  console.log('Hello ' + name + ' ' + lastName + '.');
+function square(num) {
+  return num * num;
 }
 
-greet('Alan', 'Fidelino');
-greet('Mary', 'Smith');
+
+// let number = square(9);
+// console.log(number);
+console.log(square(3));
