@@ -1,28 +1,17 @@
-//Logical Operators with Non-booleans pt2
+// Exercise
 
-//False values
-// undefined 
-// null 
-// 0
-// false
-// ''
-// NaN
+let a = 'red';
+let b = 'blue';
 
-// Using || if the operand is falsy, the truthy value (values not listed above) will be returned
-// e.g.
-console.log(false || 'Alan');
-// will return 'Alan'
+// let swapA = a == 'red' ? 'blue' : 'red';
+// let swapB = b == 'blue' ? 'red' : 'blue';
+// console.log('SwapA ==', swapA);
+// console.log('SwapB ==', swapB);
 
-// Anything not falsy is truthy
-// consider the next expression, the first truthy value is returned, this is called Short-circuiting
-
-let shortCircuit = 0 || 1 || 5;
-console.log('Result of 0 || 1 || 5 ==', shortCircuit);
-
-
-// Real world example
-
-let userColor = '';
-let defaultColor = 'blue';
-let currentColor = userColor || defaultColor;
-console.log('Current color ==', currentColor);
+// Instructor's solution 
+let c = a;
+console.log('C==', c);
+a = b;
+console.log('A==', a);
+b = c;
+console.log('B==', b);
