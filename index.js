@@ -1,17 +1,25 @@
-// Exercise
+// if...else
 
-let a = 'red';
-let b = 'blue';
+//Hour
+//If hour is between 6am - 12pm: Good morning!
+//If hour is between 1pm - 6pm: Good afternoon!
+//Otherwise: Good evening!
 
-// let swapA = a == 'red' ? 'blue' : 'red';
-// let swapB = b == 'blue' ? 'red' : 'blue';
-// console.log('SwapA ==', swapA);
-// console.log('SwapB ==', swapB);
+// if(condition){
+//   statement
+// }else if(anotherCondition){
+//   statement
+// }else if(anotherCondition){
+//   statement
+// }else{
+//   execute this instead
+// }
 
-// Instructor's solution 
-let c = a;
-console.log('C==', c);
-a = b;
-console.log('A==', a);
-b = c;
-console.log('B==', b);
+let hour = prompt("What is the time?")
+
+if (hour >= 6 && hour < 12)
+  console.log('Good morning')
+else if (hour >= 12 && hour < 18)
+  console.log('Good afternoon');
+else
+  console.log('Good evening!');
