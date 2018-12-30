@@ -1,5 +1,15 @@
-let name = 'Alan';
-let age = 47;
-let isHired = true;
-let firstName;
-let selectedColor = null;
+// Object 
+
+let person = {
+  name: "Alan",
+  age: 47
+}
+
+
+
+// Dot Notation
+person.name = 'Carlos'
+console.log(person.name);
+
+// Bracket Notation
+console.log(person.age);
