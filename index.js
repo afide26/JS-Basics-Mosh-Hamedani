@@ -1,23 +1,28 @@
-// Logical Operators with non-booleans
-// Logical AND (&&)
-//Returns true if both sides are true
-//console.log(false && true);// false since one side is false
+//Logical Operators with Non-booleans pt2
 
-// let highIncome = true;
-// let goodCreditScore = true;
+//False values
+// undefined 
+// null 
+// 0
+// false
+// ''
+// NaN
 
-// let eligibleForLoan = highIncome && goodCreditScore;
-// console.log(eligibleForLoan);
+// Using || if the operand is falsy, the truthy value (values not listed above) will be returned
+// e.g.
+console.log(false || 'Alan');
+// will return 'Alan'
 
-// LOGICAL OR (||)
-// Either side returns true
+// Anything not falsy is truthy
+// consider the next expression, the first truthy value is returned, this is called Short-circuiting
 
-let highIncome = true;
-let goodCreditScore = true;
+let shortCircuit = 0 || 1 || 5;
+console.log('Result of 0 || 1 || 5 ==', shortCircuit);
 
-let eligibleForLoan = highIncome || goodCreditScore; //returns true; since one side is true
-console.log('Eligible', eligibleForLoan);
 
-//NOT (!)
-let applicationRefused = !eligibleForLoan;
-console.log('Negated result with !', applicationRefused);
+// Real world example
+
+let userColor = '';
+let defaultColor = 'blue';
+let currentColor = userColor || defaultColor;
+console.log('Current color ==', currentColor);
