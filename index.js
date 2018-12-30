@@ -1,20 +1,18 @@
-//Break and Continue
+//Exercise Max Number
 
-let a = 0;
+//My solution
 
-while (a <= 10) {
-  //Use of break for certain conditions
-  if (a === 5) break;
-  console.log('Break lesson', a);
-  a++
+function maxNumber(a, b) {
+  return a > b ? a : b;
 }
 
-let b = 0
-while (b <= 10) {
-  if (b % 2 === 0) {
-    b++;
-    continue;
-  }
-  console.log('Continue lesson', b);
-  b++
+console.log(maxNumber(3, 5));
+
+
+// Instructor's solution
+function max(a, b) {
+  if (a > b) return a
+  return b;
 }
+
+console.log(max(3, 3))
