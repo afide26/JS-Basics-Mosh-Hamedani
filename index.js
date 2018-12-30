@@ -1,9 +1,10 @@
-// Do While
+// For in loops (used for objects)
 
+let person = {
+  name: "Alan",
+  age: 47,
+  job: 'Developer'
+}
 
-let i = 9;
-
-do {
-  if (i % 2 !== 0) console.log('Hello from do while', i);
-  i++;
-} while (i <= 5);
+for (let key in person)
+  console.log(key, person[key])
