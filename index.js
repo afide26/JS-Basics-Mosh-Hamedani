@@ -1,7 +1,9 @@
-// While loop
-let i = 0;
+// Do While
 
-while (i <= 5) {
-  if (i % 2 !== 0) console.log('Hello from While loop too', i);
+
+let i = 9;
+
+do {
+  if (i % 2 !== 0) console.log('Hello from do while', i);
   i++;
-}
+} while (i <= 5);
