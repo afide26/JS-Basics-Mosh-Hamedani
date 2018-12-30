@@ -1,19 +1,20 @@
-//For in loops for objects
+//Break and Continue
 
-let person = {
-  firstName: 'Alan',
-  lastName: 'Fidelino',
-  age: 47,
-  job: 'UI/UX and Front End Developer'
+let a = 0;
+
+while (a <= 10) {
+  //Use of break for certain conditions
+  if (a === 5) break;
+  console.log('Break lesson', a);
+  a++
 }
 
-for (let key in person)
-  console.log(`${key}: ${person[key]}`);
-
-
-//For of loops for Arrays
-
-let colors = ['green', 'red', 'blue'];
-
-for (let color of colors)
-  console.log(color);
+let b = 0
+while (b <= 10) {
+  if (b % 2 === 0) {
+    b++;
+    continue;
+  }
+  console.log('Continue lesson', b);
+  b++
+}
