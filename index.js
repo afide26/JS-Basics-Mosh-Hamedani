@@ -1,18 +1,13 @@
-//Exercise Max Number
+//Exercise Landscape or Portrait
 
-//My solution
-
-function maxNumber(a, b) {
-  return a > b ? a : b;
+//My Solution
+function isLandscape(width, height) {
+  return (width > height) ? true : false;
 }
 
-console.log(maxNumber(3, 5));
-
-
-// Instructor's solution
-function max(a, b) {
-  if (a > b) return a
-  return b;
+// Instructor's solution shorter way
+function isLandscape(width, height) {
+  return (width > height) //this line returns true or false.
 }
 
-console.log(max(3, 3))
+console.log(isLandscape(200, 200))
