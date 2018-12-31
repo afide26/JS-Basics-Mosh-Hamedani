@@ -1,41 +1,33 @@
+//Speed limit 70
+
 let title = document.getElementById('title');
-title.innerHTML = "FizzBuzz Algorithm Exercise";
-let style = {
-  fontSize: '30px',
-  fontWeight: 'normal',
-  color: 'red',
-  fontFamily: 'Arial, Helvetica, sans-serif',
-  letterSpacing: '3px'
-}
-Object.assign(title.style, style);
+title.innerHTML = 'Speed Checker'
 
-function fizzBuzzMine(number) {
-  if (number % 3 === 0) return console.log("Fizz");
-  if (number % 5 === 0) return console.log("Buzz");
-  if (typeof number !== number) return console.log('NaN')
-  return console.log(number)
-}
+console.log(speedChecker(130));
 
-// let fizzNumber = prompt("What is the number?");
-// fizzBuzzMine(fizzNumber);
+function checkSpeed(speed) {
 
-//Instructor's solution
-
-function fizzBuzz(input) {
-  if (typeof input !== 'number') return console.log(NaN);
-
-  if ((input % 3 === 0) && (input % 5 === 0))
-    return "FizzBuzz";
-  if (input % 3 === 0)
-    return "Fizz";
-  if (input % 5 === 0)
-    return "Buzz"
-  return input
+  if (speed <= 74) console.log('Ok!')
+  if (speed >= 75) {
+    if ((speed - 75) % 5 === 0) {
+      let result = (speed - 75) / 5;
+      return result >= 12 ? `Licence suspended, you reached ${result} points` : `Points: ${result}`
+    } else if ((speed - 75) % 5 !== 0) {
+      let result = Math.floor((speed - 75) / 5);
+      return result >= 12 ? `Licence suspended, you reached ${result} points` : `Points: ${result}`
+    }
+  }
 }
 
+// Instructor's solution
 
-let p = document.createElement('p');
-p.innerHTML = fizzBuzz(false);
-title.appendChild(p);
-
-console.log(fizzBuzz(false))
+function speedChecker(speed) {
+  const speedLimit = 70;
+  const kmPerPoint = 5;
+  if (speed < speedLimit + kmPerPoint) {
+    return ('Ok!');
+  }
+  const points = Math.floor((speed - speedLimit) / kmPerPoint);
+  if (points >= 12) return (`Licence suspended, you reached ${points} points.`)
+  else return (`Points: ${points}`)
+}
