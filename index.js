@@ -1,23 +1,28 @@
-//Sums and Multiples of 3 and 5
+//Grade
 
-console.log(sumMultiples(30))
+const marks = [50, 60, 55];
 
-//3: 3, 6,9,12,15,18,21,24,27,30 =165
-//5: 5, 10,15,20,25,30 = 105
-function sumMultiples(limit) {
-  let multiple = 0;
-  //My solution
-  // for (let i = 0; i <= limit; i++) {
-  //   if ((i % 3 === 0))
-  //     multiple += i;
-  //   else if ((i % 5 === 0))
-  //     multiple += i;
-  // }
+//0-59: F
+//60-69: D
+//70-79: C
+//80-89: B
+//90-100: A
 
-  //Instructor's solution
-  for (let i = 0; i <= limit; i++)
-    if (i % 3 === 0 || i % 5 === 0)
-      multiple += i;
+console.log(calculateGrade(marks))
 
-  return multiple;
+function calculateGrade(marks) {
+  let total = 0;
+
+
+  for (let grade of marks)
+    total += grade
+
+  let average = total / marks.length;
+  console.log(average);
+
+  if (average >= 90) return 'A'
+  else if (average >= 80) return 'B'
+  else if (average >= 70) return 'C'
+  else if (average >= 60) return 'D'
+  else return 'F'
 }
