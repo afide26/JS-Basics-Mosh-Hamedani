@@ -1,33 +1,12 @@
-//Speed limit 70
+//Even Odd Number
 
-let title = document.getElementById('title');
-title.innerHTML = 'Speed Checker'
 
-console.log(speedChecker(130));
+showNumbers(15);
 
-function checkSpeed(speed) {
-
-  if (speed <= 74) console.log('Ok!')
-  if (speed >= 75) {
-    if ((speed - 75) % 5 === 0) {
-      let result = (speed - 75) / 5;
-      return result >= 12 ? `Licence suspended, you reached ${result} points` : `Points: ${result}`
-    } else if ((speed - 75) % 5 !== 0) {
-      let result = Math.floor((speed - 75) / 5);
-      return result >= 12 ? `Licence suspended, you reached ${result} points` : `Points: ${result}`
-    }
+function showNumbers(limit) {
+  for (let i = 0; i <= limit; i++) {
+    // if (i % 2 == 0) console.log(`${i} "EVEN"`)
+    // else console.log(`${i} "ODD"`)
+    const message = (i % 2 == 0) ? console.log(`${i} "EVEN"`) : console.log(`${i} "ODD"`);
   }
-}
-
-// Instructor's solution
-
-function speedChecker(speed) {
-  const speedLimit = 70;
-  const kmPerPoint = 5;
-  if (speed < speedLimit + kmPerPoint) {
-    return ('Ok!');
-  }
-  const points = Math.floor((speed - speedLimit) / kmPerPoint);
-  if (points >= 12) return (`Licence suspended, you reached ${points} points.`)
-  else return (`Points: ${points}`)
 }
