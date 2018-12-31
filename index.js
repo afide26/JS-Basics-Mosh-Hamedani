@@ -1,6 +1,6 @@
 //Grade
 
-const marks = [50, 60, 55];
+const marks = [99, 75, 99, 77, 100];
 
 //0-59: F
 //60-69: D
@@ -10,7 +10,7 @@ const marks = [50, 60, 55];
 
 console.log(calculateGrade(marks))
 
-function calculateGrade(marks) {
+function calculateGradeOld(marks) {
   let total = 0;
 
 
@@ -25,4 +25,23 @@ function calculateGrade(marks) {
   else if (average >= 70) return 'C'
   else if (average >= 60) return 'D'
   else return 'F'
+}
+
+function calculateAverage(arr) {
+  let total = 0;
+
+  for (let value of arr) {
+    total += value
+  }
+  return total / arr.length;
+}
+
+function calculateGrade(marks) {
+  const average = Math.round(calculateAverage(marks));
+
+  if (average < 60) return `${average} - 'F';`
+  if (average < 70) return `${average} - 'D'`;
+  if (average < 80) return `${average} - 'C'`;
+  if (average < 90) return `${average} - 'B'`;
+  return `${average} - 'A'`
 }
