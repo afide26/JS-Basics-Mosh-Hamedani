@@ -1,30 +1,19 @@
-//Count Truthy
+//Show properties
 
-const arr = [0, null, undefined, '', 2, 3];
-
-
-function countTruthyMine(arr) {
-  let truthy = 0;
-
-  for (let item of arr) {
-    if (typeof item !== 'number' || typeof item !== 'string') {
-      truthy + 0;
-    } else {
-      truthy++;
-    }
-  }
-  return truthy;
+const person = {
+  name: 'Alan',
+  age: 47,
+  ID: 1234,
+  job: 'Developer'
 }
 
-function countTruthy(arr) {
-  let count = 0;
-
-  for (let value of arr) {
-    if (value) {
-      count++
+function showProperties(object) {
+  for (let key in object) {
+    if (typeof object[key] === 'string') {
+      console.log(key, object[key])
     }
   }
-  return count;
 }
 
-console.log(countTruthy(arr));
+// Call the function
+showProperties(person)
