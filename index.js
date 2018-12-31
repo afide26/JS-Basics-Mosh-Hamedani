@@ -1,14 +1,30 @@
-//Even Odd Number
+//Count Truthy
+
+const arr = [0, null, undefined, '', 2, 3];
 
 
-showNumbers(15);
+function countTruthyMine(arr) {
+  let truthy = 0;
 
-function showNumbers(limit) {
-  for (let i = 0; i <= limit; i++) {
-    // if (i % 2 == 0) console.log(`${i} "EVEN"`)
-    // else console.log(`${i} "ODD"`)
-    // const message = (i % 2 == 0) ? console.log(`${i} "EVEN"`) : console.log(`${i} "ODD"`);
-    const message = (i % 2 == 0) ? "EVEN" : "ODD"
-    console.log(i, message);
+  for (let item of arr) {
+    if (typeof item !== 'number' || typeof item !== 'string') {
+      truthy + 0;
+    } else {
+      truthy++;
+    }
   }
+  return truthy;
 }
+
+function countTruthy(arr) {
+  let count = 0;
+
+  for (let value of arr) {
+    if (value) {
+      count++
+    }
+  }
+  return count;
+}
+
+console.log(countTruthy(arr));
