@@ -1,22 +1,18 @@
-//Stars
-//My Solution
-showStars(3);
+//Show Primes
+//Prime (whose factors are one and itself)
+//Composite
+showPrimes(20);
 
-function showStarsMine(rows) {
-  let star = '*'
+function showPrimes(limit) {
+  for (let number = 2; number <= limit; number++) {
+    let isPrime = true;
 
-  for (let i = 0; i <= rows; i++) {
-    console.log(star.repeat(i))
-  }
-}
-
-function showStars(rows) {
-
-  for (let row = 0; row <= rows; row++) {
-    let pattern = '';
-    for (let i = 0; i < row; i++) {
-      pattern += '*';
+    for (let factor = 2; factor < number; factor++) {
+      if (number % factor === 0) {
+        isPrime = false;
+        break;
+      }
     }
-    console.log(pattern);
+    if (isPrime) console.log(number);
   }
 }
