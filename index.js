@@ -5,20 +5,20 @@
 // 4. Dynamic Nature of Object - you can always add or remove objects
 // 5. Constructor Property
 // 6. Functions are Objects
+// 7. Value vs Reference Types
 
-// Constructor Function
+// Take aways 
+// Primitives are copied by value
+let x = 10;
+let y = x; // the initial value of x is stored in y
+x = 20; // the value of x is changed but does not affect the value of y as the first value of x was copied
 
-function Circle(radius) {
-  this.radius = radius;
-  this.draw = function () {
-    console.log('Constructor Draw')
-  }
+// Objects are copied by their reference
+
+let obj1 = {
+  name: 'Alan'
 }
 
-const circle2 = new Circle(4);
+let obj2 = obj1; // obj2 copied obj1 which is a reference to the object
 
-//Take aways
-//Functions are objects
-
-const circleCall = Circle.call({}, 1)
-const circleCall2 = Circle.apply({}, [1, 'yellow'])
+obj1.name = 'Carlos'; //when the property of the object changes, obj2's properties also change.
