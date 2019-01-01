@@ -1,11 +1,14 @@
-//Lesson Iterating an Array
+//Lesson Joining Arrays
 
 const numbers = [1, 2, 3];
 
-//For of
-for (let number of numbers)
-  console.log(number);
+//Joining
+const joined = numbers.join(',') //returns a string, not an array
+console.log(joined);
 
-//For each
-
-numbers.forEach((number, i) => console.log(i, number))
+//Split
+const message = 'This is my first message'
+const parts = message.split(' ') //returns an array an not a string;
+console.log(parts);
+const joinedTwo = parts.join('-') //returns a string, not an array
+console.log(joinedTwo)
