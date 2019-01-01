@@ -12,13 +12,13 @@
 //Memory allocations and dealloactions happen automatically. Memories not used are deallocated automatically.
 //11. Math - built in properties
 //12. String - built in Object
+//13. Template literals - backtick
 
-//String primitive
-const message = 'This is my \n \'first message\''
-console.log(message.length)
-console.log(message.includes('This')) //case sensitive
-console.log(message.startsWith('This'))
-console.log(message.indexOf('my'));
-console.log(message.replace('first', 'second'))
-//String Object
-const another = new String('hi, string')
+const message = `This is my
+'first' message`;
+console.log(message);
+
+if (message.includes('first')) {
+  console.log(message.replace('first', 'second'))
+}
+console.log(message);
