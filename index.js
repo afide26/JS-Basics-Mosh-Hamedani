@@ -1,24 +1,25 @@
-//Exercise Address
-//street
-//city
-// zipcode
+//Exercise Factory and Constructor Function
 
-let address = {
-  street: 'Marlowe',
-  city: 'Wetherill Pk',
-  zipcode: 2164
+
+//Constructor Address
+function Address(street, city, zipCode) {
+  this.street = street;
+  this.city = city;
+  this.zipCode = zipCode;
 }
 
-function showAddressMine({ ...address
-}) {
-  console.log(`Your address is ${address.street}, ${address.city},
-  ${address.zipcode}`)
+const newAdd = new Address('Charles', 'Smithfield', 2164);
+console.log(`Constructor function: ${newAdd.street}, ${newAdd.city}, ${newAdd.zipCode}`)
+
+//Factory function
+
+function makeAddress(street, city, zipCode) {
+  return {
+    street,
+    city,
+    zipCode
+  }
 }
 
-function showAddress(address) {
-  //Using for in
-  for (let key in address)
-    console.log(`${key}:`, address[key])
-}
-
-showAddress(address)
+const newAdd2 = makeAddress('Marlowe', 'Wetherill Pk', 2164);
+console.log(`Factory function: ${newAdd2.street}, ${newAdd2.city}, ${newAdd2.zipCode}`)
