@@ -1,17 +1,17 @@
-//Lesson 1
+//Lesson Finding Elements
 
-const numbers = [3, 4]
+//Primitives
+const numbers = [1, 2, 3, 1, 4]
 
-// Methods/Properties
-//Add Elements
-//End
-numbers.push(5, 6); //Changes the array's contents
-console.log('Push', numbers);
+//IndexOf
+console.log('Index of', numbers.indexOf(1)) //Will return -1 if the index of the element is not in the array;
+console.log('Index of', numbers.indexOf('a'));
 
-//Start
-numbers.unshift(1, 2);
-console.log('Unshift', numbers)
+//Last index of - Finding the last index of a repeated item
+console.log('Last index of', numbers.lastIndexOf(1));
 
-//Middle
-numbers.splice(2, 0, 'a', 'b');
-console.log('Splice', numbers)
+//Check if element is in the array 
+//Old method
+console.log('Long method', numbers.indexOf(1) !== -1);
+//New method
+console.log('Includes method', numbers.includes(1));
