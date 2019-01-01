@@ -1,21 +1,10 @@
-//Lesson Combining and Slicing Arrays - Reference Types
+//Lesson Spread Operator
 
-const first = [{
-  id: 1,
-  name: 'a'
-}];
-const second = [{
-  id: 2,
-  name: 'b'
-}]
-const third = [{
-  id: 3,
-  name: 'c'
-}]
+const first = [1, 2, 3];
+const second = [4, 5, 6, 9]
 
 
-const combined = first.concat(second);
-const slice = combined.slice()
-console.log(combined);
-first[0].id = 10;
-console.log(slice)
+const combined = [...first, 'a', ...second, 'b'];
+const copy = [...combined];
+console.log(combined)
+console.log(copy === combined)
