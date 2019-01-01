@@ -3,11 +3,9 @@
 const numbers = [2, -1, 3, 1, 21];
 
 
-//Use every method
-// const allPositive = numbers.every((value) => value >= 0);
-// console.log('All Positive', allPositive)
+//Use filter method - need to pass a callback function
 
+const positiveNumbers = numbers.filter((number) => number >= 0);
+console.log(positiveNumbers);
 
-//Use some
-const atLeastOnePositive = numbers.some((value) => value >= 0);
-console.log('At least One Positive', atLeastOnePositive)
+// Filtering an array of Objects - normal use case
