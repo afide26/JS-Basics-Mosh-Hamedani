@@ -1,26 +1,21 @@
-//Lesson Emptying an array
+//Lesson Combining and Slicing Arrays
 
-let numbers = [1, 2, 3, 4];
-let another = numbers;
+const first = [1, 2, 3, 4];
+const second = [5, 6, 7]
+const third = [8, 9, 10]
+//Use the concat method. This returns a new array, the previous arrays are not affected
 
-//Solution 1
-// numbers = []
+const combined = first.concat(second);
+console.log(combined);
 
-//console.log(numbers)
-//console.log(another) // not garbage collected as numbers is still referenced
+//Use the spread operator method
 
+const combinedTwo = [...first, ...third];
+console.log(combinedTwo);
 
-// Solution 2
-// numbers.length = 0;
-// console.log(numbers)
-// console.log(another)
-
-//Solution 3 - Splice Method
-// numbers.splice(0, numbers.length)
-// console.log(numbers)
-// console.log(another)
-
-//Solution 4 - Pop
-while (numbers.length > 0) numbers.pop()
-console.log(numbers)
-console.log(another)
+//Slice - includes the first argument which is the index
+const slice1 = combinedTwo.slice(3); //remove all items before the index
+console.log(slice1)
+console.log(`----------`)
+const slice2 = combinedTwo.slice(3, 6); //remove all items before the index and after the second argument
+console.log(slice2)
