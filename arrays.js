@@ -1,4 +1,4 @@
-//Lesson Finding Elements
+//Lesson Arrow Functions
 
 //Reference types
 const courses = [{
@@ -20,15 +20,11 @@ const courses = [{
 
 //Use the find method instead
 
-const course = courses.find(function (course) {
-  return course.name == 'bdfjajgl;k';
-});
+const course = courses.find(course => course.name == 'bdfjajgl;k');
 console.log('Find', course);
 
 //Or use findIndex
 
-const course2 = courses.findIndex(function (course) {
-  return course.name == 'c';
-})
+const course2 = courses.findIndex(course => course.name == 'c');
 
 console.log('Find index', course2);
