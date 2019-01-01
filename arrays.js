@@ -1,17 +1,34 @@
 //Lesson Finding Elements
 
-//Primitives
-const numbers = [1, 2, 3, 1, 4]
+//Reference types
+const courses = [{
+    id: 1,
+    name: 'a'
+  },
+  {
+    id: 2,
+    name: 'b'
+  }
+]
 
-//IndexOf
-console.log('Index of', numbers.indexOf(1)) //Will return -1 if the index of the element is not in the array;
-console.log('Index of', numbers.indexOf('a'));
+// Find a course with name of 'a' as in the example
+//Will return false as each object is distinct; even if the values are the same
+// console.log(courses.includes({
+//   id: 1,
+//   name: 'a'
+// }))
 
-//Last index of - Finding the last index of a repeated item
-console.log('Last index of', numbers.lastIndexOf(1));
+//Use the find method instead
 
-//Check if element is in the array 
-//Old method
-console.log('Long method', numbers.indexOf(1) !== -1);
-//New method
-console.log('Includes method', numbers.includes(1));
+const course = courses.find(function (course) {
+  return course.name == 'bdfjajgl;k';
+});
+console.log('Find', course);
+
+//Or use findIndex
+
+const course2 = courses.findIndex(function (course) {
+  return course.name == 'c';
+})
+
+console.log('Find index', course2);
