@@ -1,27 +1,17 @@
-//Exercise Except
-const numbers = [1, 2, 3, 4, 1, 1]
+//Exercise Moving Elements
+const numbers = [1, 2, 3, 4]
 
-const output = except(numbers, [1, 2]);
-console.log(output)
-
-function exceptMine(array, excluded) {
-  for (let a = 0; a < array.length; a++) {
-    let newArray = []
-    for (let b = 0; b < excluded.length; b++) {
-      if (a !== b) {
-        newArray.push(a);
-      }
-    }
-    return newArray;
+function move(arr, index, offset) {
+  let position = index + offset;
+  if (position >= arr.length || position < 0) {
+    console.error('Invalid offset');
+    return;
   }
-}
 
-//Instructor's solution
-
-function except(array, excluded) {
-  let output = [];
-  for (let element of array)
-    if (!excluded.includes(element))
-      output.push(element)
+  const output = [...arr];
+  const element = output.splice(index, 1)[0];
+  output.splice(position, 0, element)
   return output;
 }
+
+console.log(move(numbers, 2, 1));
