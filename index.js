@@ -1,20 +1,31 @@
-//Show Primes
-//Prime (whose factors are one and itself)
-//Composite
-showPrimes(30);
+//Section 5
+// 1. Objects
+// 2. Factory Function - naming convention (camelNotation)
+// 3. Constructor Function - naming convention (PascalNotation)
 
-function showPrimes(limit) {
+//Factory Function
 
-  for (let number = 2; number <= limit; number++) {
-    if (isPrime(number)) console.log(number)
-  }
-}
-
-function isPrime(number) {
-  for (let factor = 2; factor < number; factor++) {
-    if (number % factor === 0) {
-      return false;
+function createCircle(radius) {
+  return {
+    radius,
+    draw() {
+      console.log('Draw - Method from Factory Function')
     }
-    return true;
   }
 }
+
+//Call the function above
+const circle1 = createCircle(2);
+
+
+//Constructor Function
+
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log('Draw from constructor')
+  }
+}
+
+//Call the function above
+const circle2 = new Circle(3);
