@@ -2,30 +2,17 @@
 // 1. Objects
 // 2. Factory Function - naming convention (camelNotation)
 // 3. Constructor Function - naming convention (PascalNotation)
+// 4. Dynamic Nature of Object - you can always add or remove objects
 
-//Factory Function
-
-function createCircle(radius) {
-  return {
-    radius,
-    draw() {
-      console.log('Draw - Method from Factory Function')
-    }
-  }
+const circle = {
+  radius: 1
 }
 
-//Call the function above
-const circle1 = createCircle(2);
-
-
-//Constructor Function
-
-function Circle(radius) {
-  this.radius = radius;
-  this.draw = function () {
-    console.log('Draw from constructor')
-  }
+circle.color = 'yellow'
+circle.draw = function () {
+  console.log('Draw')
 }
 
-//Call the function above
-const circle2 = new Circle(3);
+delete(circle.color)
+delete circle.draw
+console.log(circle);
