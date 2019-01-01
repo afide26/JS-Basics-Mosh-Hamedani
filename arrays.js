@@ -1,21 +1,21 @@
-//Lesson Combining and Slicing Arrays
+//Lesson Combining and Slicing Arrays - Reference Types
 
-const first = [1, 2, 3, 4];
-const second = [5, 6, 7]
-const third = [8, 9, 10]
-//Use the concat method. This returns a new array, the previous arrays are not affected
+const first = [{
+  id: 1,
+  name: 'a'
+}];
+const second = [{
+  id: 2,
+  name: 'b'
+}]
+const third = [{
+  id: 3,
+  name: 'c'
+}]
+
 
 const combined = first.concat(second);
+const slice = combined.slice()
 console.log(combined);
-
-//Use the spread operator method
-
-const combinedTwo = [...first, ...third];
-console.log(combinedTwo);
-
-//Slice - includes the first argument which is the index
-const slice1 = combinedTwo.slice(3); //remove all items before the index
-console.log(slice1)
-console.log(`----------`)
-const slice2 = combinedTwo.slice(3, 6); //remove all items before the index and after the second argument
-console.log(slice2)
+first[0].id = 10;
+console.log(slice)
