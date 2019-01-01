@@ -1,10 +1,11 @@
-//Lesson Spread Operator
+//Lesson Iterating an Array
 
-const first = [1, 2, 3];
-const second = [4, 5, 6, 9]
+const numbers = [1, 2, 3];
 
+//For of
+for (let number of numbers)
+  console.log(number);
 
-const combined = [...first, 'a', ...second, 'b'];
-const copy = [...combined];
-console.log(combined)
-console.log(copy === combined)
+//For each
+
+numbers.forEach((number, i) => console.log(i, number))
