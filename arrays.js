@@ -1,22 +1,21 @@
-//Exercise Array from Range
+//Exercise Write a Function that returns like includes
 //My Solution
-function arrayFromRangeMine(min, max) {
-  let arr = [];
-  for (let number of arr) {
-    if (number <= min && number >= max) {
-      arr.push(number)
-    }
-  }
-  console.log(arr)
+const numbers = [1, 2, 3, 4]
+
+console.log(numbers.includes(1));
+
+function includesNumber(arr, searchElement) {
+  return arr.indexOf(searchElement) === -1 ? false : true;
 }
+console.log(includesNumber(numbers, 4));
 
 //Instructor's solution
-function arrayFromRange(min, max) {
-  const output = [];
-  for (let i = min; i <= max; i++)
-    output.push(i)
-  return output;
-}
 
-const numbers = arrayFromRange(-10, -4);
-console.log(numbers);
+function includes(arr, searchElement) {
+  for (let element of arr) {
+    if (element === searchElement)
+      return true
+  }
+  return false;
+}
+console.log(includes(numbers, 4));
