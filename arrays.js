@@ -1,28 +1,30 @@
-//Exercise Get Max
-const numbers = [1, 1, 2, 3, 4, 5, 55]
+//Exercise Movies
+const movies = [{
+  title: 'a',
+  year: 2018,
+  rating: 4.5
+}, {
+  title: 'b',
+  year: 2018,
+  rating: 4.7
+}, {
+  title: 'c',
+  year: 2018,
+  rating: 3
+}, {
+  title: 'd',
+  year: 2017,
+  rating: 4.5
+}];
 
-function getMaxMine(array) {
-  return Math.max(...array)
+function getTopMoviesMine(array) {
+  for (let index in array) {
+    console.log(Object.values(array[index]));
+  }
 }
-
-//Instructor's solution
-function getMax(array) {
-  //Simple solution
-  // if (array.length === 0) return undefined;
-
-  // let max = array[0];
-  // for (let i = 1; i < array.length; i++)
-  //   max = array[i];
-  // return max;
-
-  if (array.length === 0) return undefined;
-
-  return array.reduce((a, b) => {
-    return a > b ? a : b;
-  })
-
-
-}
-
-console.log(getMax([]));
-// Solution from https://www.jstips.co/en/javascript/calculate-the-max-min-value-from-an-array/
+// Instructor's solution
+const titles = movies.filter((m) => m.year === 2018 && m.rating > 4)
+  .sort((a, b) => a.rating - b.rating)
+  .reverse()
+  .map(m => m.title)
+console.log(titles);
