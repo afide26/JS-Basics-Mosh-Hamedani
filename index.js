@@ -7,6 +7,7 @@
 // 6. Functions are Objects
 // 7. Value vs Reference Types
 // 8. Enumerating Properties of an Object
+// 9. Cloning an Object
 // Example
 const circle = {
   radius: 1,
@@ -15,14 +16,25 @@ const circle = {
   }
 }
 
-for (let key in circle) {
-  console.log(key, circle[key])
+//Old way of cloning
+const another = {}
+
+for (let key in circle)
+  another[key] = circle[key]
+
+console.log(another);
+
+//New method - assign
+
+const clone = Object.assign({
+  name: 'Alan'
+}, circle);
+console.log(clone)
+
+//Spread Operator - take all the properties of the method
+
+const circleSpread = {
+  name: 'Cloned Circle',
+  ...circle
 }
-
-for (let key of Object.keys(circle))
-  console.log(key)
-
-for (let entry of Object.entries(circle))
-  console.log(entry)
-
-if ('color' in circle) console.log('yes');
+console.log(circleSpread)
