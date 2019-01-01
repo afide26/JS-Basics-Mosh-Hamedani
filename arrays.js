@@ -1,21 +1,27 @@
-//Exercise Write a Function that returns like includes
-//My Solution
-const numbers = [1, 2, 3, 4]
+//Exercise Excep
+const numbers = [1, 2, 3, 4, 1, 1]
 
-console.log(numbers.includes(1));
+const output = except(numbers, [1, 2]);
+console.log(output)
 
-function includesNumber(arr, searchElement) {
-  return arr.indexOf(searchElement) === -1 ? false : true;
+function exceptMine(array, excluded) {
+  for (let a = 0; a < array.length; a++) {
+    let newArray = []
+    for (let b = 0; b < excluded.length; b++) {
+      if (a !== b) {
+        newArray.push(a);
+      }
+    }
+    return newArray;
+  }
 }
-console.log(includesNumber(numbers, 4));
 
 //Instructor's solution
 
-function includes(arr, searchElement) {
-  for (let element of arr) {
-    if (element === searchElement)
-      return true
-  }
-  return false;
+function except(array, excluded) {
+  let output = [];
+  for (let element of array)
+    if (!excluded.includes(element))
+      output.push(element)
+  return output;
 }
-console.log(includes(numbers, 4));
