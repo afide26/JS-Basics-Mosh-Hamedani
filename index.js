@@ -11,12 +11,14 @@
 // 10. Garbage collection
 //Memory allocations and dealloactions happen automatically. Memories not used are deallocated automatically.
 //11. Math - built in properties
-//E.g. methods
-console.log(Math.random()) //returns a random number
-console.log(Math.round(1.6)) //returns the highest rounded number
-console.log(Math.max(1, 2, 59, 39, 99)) //returns the highest value of a collection
-console.log(Math.max.apply(null, [1, 2, 59, 39, 109])) //use apply to use it for arrays
-let numbers = [1, 2, 3, 5, 6, 77]
+//12. String - built in Object
 
-//Simpler way using spread
-console.log(Math.max(...numbers)) //Using spread operator for an array
+//String primitive
+const message = 'This is my \n \'first message\''
+console.log(message.length)
+console.log(message.includes('This')) //case sensitive
+console.log(message.startsWith('This'))
+console.log(message.indexOf('my'));
+console.log(message.replace('first', 'second'))
+//String Object
+const another = new String('hi, string')
