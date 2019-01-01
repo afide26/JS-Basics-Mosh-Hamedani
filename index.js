@@ -6,19 +6,23 @@
 // 5. Constructor Property
 // 6. Functions are Objects
 // 7. Value vs Reference Types
-
-// Take aways 
-// Primitives are copied by value
-let x = 10;
-let y = x; // the initial value of x is stored in y
-x = 20; // the value of x is changed but does not affect the value of y as the first value of x was copied
-
-// Objects are copied by their reference
-
-let obj1 = {
-  name: 'Alan'
+// 8. Enumerating Properties of an Object
+// Example
+const circle = {
+  radius: 1,
+  draw() {
+    console.log('draw')
+  }
 }
 
-let obj2 = obj1; // obj2 copied obj1 which is a reference to the object
+for (let key in circle) {
+  console.log(key, circle[key])
+}
 
-obj1.name = 'Carlos'; //when the property of the object changes, obj2's properties also change.
+for (let key of Object.keys(circle))
+  console.log(key)
+
+for (let entry of Object.entries(circle))
+  console.log(entry)
+
+if ('color' in circle) console.log('yes');
