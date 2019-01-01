@@ -1,30 +1,18 @@
-//Lesson Arrow Functions
+//Lesson Removing Elements
 
-//Reference types
-const courses = [{
-    id: 1,
-    name: 'a'
-  },
-  {
-    id: 2,
-    name: 'b'
-  }
-]
+const numbers = [1, 2, 3, 4];
+const spliceNumbers = [5, 6, 7, 8, 9]
 
-// Find a course with name of 'a' as in the example
-//Will return false as each object is distinct; even if the values are the same
-// console.log(courses.includes({
-//   id: 1,
-//   name: 'a'
-// }))
+//End
+const last = numbers.pop();
+console.log(numbers);
+console.log(last);
 
-//Use the find method instead
+//Start
+const first = numbers.shift();
+console.log(numbers);
+console.log(first);
 
-const course = courses.find(course => course.name == 'bdfjajgl;k');
-console.log('Find', course);
-
-//Or use findIndex
-
-const course2 = courses.findIndex(course => course.name == 'c');
-
-console.log('Find index', course2);
+//Middle
+spliceNumbers.splice(3, 2) //remove item from index 3 with 2 elements;
+console.log(spliceNumbers)
