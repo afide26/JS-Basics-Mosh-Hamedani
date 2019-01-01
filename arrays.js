@@ -1,19 +1,22 @@
-//Lesson Reducing an Array
+//Exercise Array from Range
+//My Solution
+function arrayFromRangeMine(min, max) {
+  let arr = [];
+  for (let number of arr) {
+    if (number <= min && number >= max) {
+      arr.push(number)
+    }
+  }
+  console.log(arr)
+}
 
-const numbers = [2, -1, 3, 1, 21];
+//Instructor's solution
+function arrayFromRange(min, max) {
+  const output = [];
+  for (let i = min; i <= max; i++)
+    output.push(i)
+  return output;
+}
 
-
-//Use Long method
-
-let sum = 0;
-
-for (let num of numbers)
-  sum += num;
-console.log(sum);
-
-//More elegant => Reduce method 2 arguments, function, and initial value;
-
-const reducedSum = numbers.reduce((accumulator, currentValue) => {
-  return accumulator + currentValue;
-}, 0);
-console.log(reducedSum);
+const numbers = arrayFromRange(-10, -4);
+console.log(numbers);
