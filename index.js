@@ -4,19 +4,7 @@
 // 3. Constructor Function - naming convention (PascalNotation)
 // 4. Dynamic Nature of Object - you can always add or remove objects
 // 5. Constructor Property
-
-//Factory Function
-function createCircle(radius) {
-  return {
-    radius,
-    draw() {
-      console.log('Factory Draw')
-    },
-    color: 'red'
-  }
-}
-
-const circle1 = createCircle(3);
+// 6. Functions are Objects
 
 // Constructor Function
 
@@ -30,4 +18,7 @@ function Circle(radius) {
 const circle2 = new Circle(4);
 
 //Take aways
-//Every object has a constructor property that points to the function that created the object
+//Functions are objects
+
+const circleCall = Circle.call({}, 1)
+const circleCall2 = Circle.apply({}, [1, 'yellow'])
