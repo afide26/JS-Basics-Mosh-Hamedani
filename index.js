@@ -8,33 +8,15 @@
 // 7. Value vs Reference Types
 // 8. Enumerating Properties of an Object
 // 9. Cloning an Object
-// Example
-const circle = {
-  radius: 1,
-  draw() {
-    console.log('draw')
-  }
-}
+// 10. Garbage collection
+//Memory allocations and dealloactions happen automatically. Memories not used are deallocated automatically.
+//11. Math - built in properties
+//E.g. methods
+console.log(Math.random()) //returns a random number
+console.log(Math.round(1.6)) //returns the highest rounded number
+console.log(Math.max(1, 2, 59, 39, 99)) //returns the highest value of a collection
+console.log(Math.max.apply(null, [1, 2, 59, 39, 109])) //use apply to use it for arrays
+let numbers = [1, 2, 3, 5, 6, 77]
 
-//Old way of cloning
-const another = {}
-
-for (let key in circle)
-  another[key] = circle[key]
-
-console.log(another);
-
-//New method - assign
-
-const clone = Object.assign({
-  name: 'Alan'
-}, circle);
-console.log(clone)
-
-//Spread Operator - take all the properties of the method
-
-const circleSpread = {
-  name: 'Cloned Circle',
-  ...circle
-}
-console.log(circleSpread)
+//Simpler way using spread
+console.log(Math.max(...numbers)) //Using spread operator for an array
