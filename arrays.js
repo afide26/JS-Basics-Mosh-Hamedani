@@ -1,4 +1,4 @@
-//Exercise Excep
+//Exercise Except
 const numbers = [1, 2, 3, 4, 1, 1]
 
 const output = except(numbers, [1, 2]);
