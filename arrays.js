@@ -1,18 +1,26 @@
-//Lesson Removing Elements
+//Lesson Emptying an array
 
-const numbers = [1, 2, 3, 4];
-const spliceNumbers = [5, 6, 7, 8, 9]
+let numbers = [1, 2, 3, 4];
+let another = numbers;
 
-//End
-const last = numbers.pop();
-console.log(numbers);
-console.log(last);
+//Solution 1
+// numbers = []
 
-//Start
-const first = numbers.shift();
-console.log(numbers);
-console.log(first);
+//console.log(numbers)
+//console.log(another) // not garbage collected as numbers is still referenced
 
-//Middle
-spliceNumbers.splice(3, 2) //remove item from index 3 with 2 elements;
-console.log(spliceNumbers)
+
+// Solution 2
+// numbers.length = 0;
+// console.log(numbers)
+// console.log(another)
+
+//Solution 3 - Splice Method
+// numbers.splice(0, numbers.length)
+// console.log(numbers)
+// console.log(another)
+
+//Solution 4 - Pop
+while (numbers.length > 0) numbers.pop()
+console.log(numbers)
+console.log(another)
