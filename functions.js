@@ -1,31 +1,27 @@
-//Lesson 3 - Arguments
+//Lesson 3 - Rest Operator
 
 //Dynamic language - arguments of a function
 
-// function sum(a, b) {
-//   return a + b;
-// }
-
-
-// console.log(sum(1, 2));
-// console.log(sum(1))//can pass 1 argument even if the function has 2 params; it will return undefined
-
-
-function add(a, b) {
-  console.log(arguments); //will print out all the arguments
-  return a + b;
-}
-
-console.log(add(1, 2, 3, 4, 5));
 
 //Make the code flexible to accept multiple arguments
 
-function multiple() {
-  let total = 0;
-  for (let value of arguments)
-    total += value;
-  console.log(total);
-  return;
+function add(...args) { //rest operator with arguments ...args
+  return args.reduce((a, b) => a + b);
 }
 
-multiple(1, 3, 4, 56, 19);
+console.log(add(1, 3, 4, 56, 19));
+
+//Real use case: Shopping cart with discount
+//Check how the discount was calculated (1 - discount);
+
+function checkDiscount(discount, ...prices) { //...prices is same as arguments and the last parameter of the function
+  const total = prices.reduce((a, b) => a + b);
+  const totalDiscount = total - (total * (1 - discount));
+  return `Total Price is: $${total * (1-discount)}\n Total discount is: $${totalDiscount}`
+}
+
+let rice = 20;
+let milk = 40;
+let disc = 0.2;
+
+console.log(checkDiscount(disc, milk, rice))
