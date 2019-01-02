@@ -1,17 +1,31 @@
-//Lesson 2 - Hoisting
-//Function Declaration - named functions
-walk(); //can be called before it's defined;
-//All function declarations are moved to the top of the file. Hoisting
-run(); // function expressions cannot be called before it's defined as the variable is not yet defined before calling the function.
+//Lesson 3 - Arguments
 
-function walk() {
-  console.log('Walk');
+//Dynamic language - arguments of a function
+
+// function sum(a, b) {
+//   return a + b;
+// }
+
+
+// console.log(sum(1, 2));
+// console.log(sum(1))//can pass 1 argument even if the function has 2 params; it will return undefined
+
+
+function add(a, b) {
+  console.log(arguments); //will print out all the arguments
+  return a + b;
 }
 
-//Function expression - anonymous function assigned to a variable
-const run = function () {
-  console.log('Run')
-};
+console.log(add(1, 2, 3, 4, 5));
 
+//Make the code flexible to accept multiple arguments
 
-run();
+function multiple() {
+  let total = 0;
+  for (let value of arguments)
+    total += value;
+  console.log(total);
+  return;
+}
+
+multiple(1, 3, 4, 56, 19);
