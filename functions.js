@@ -1,40 +1,24 @@
-//Lesson 11 - Changing this
+//Sum of Arguments
 
-// this refers to object that is executing the current function
-
-// function in an object is a method -> this refers to the object
-// regular function -> this refers to global(window, global(in Node))
-
-//Example First Approach:
-const video = {
-  title: 'A',
-  tags: ['a', 'b', 'c'],
-  showTags() {
-    // let self = this;
-    // this.tags.forEach(function (tag) {
-    //   console.log(this.title, tag);
-    // }.bind(this)) //now there is a new function created by bind that is scoped to this object.
-
-    //Arrow functions inherit this
-    this.tags.forEach((tag) => console.log(this.title, tag))
+function sumMine(...args) {
+  if (Array.isArray(args) === true) {
+    args.reduce((a, b) => a + b)
   }
+  let total = 0;
+  for (let value of args)
+    total += value;
+  return total;
+
 }
 
-video.showTags();
-
-function playVideo(a, b) {
-  console.log(this);
+//Instructor's solution
+function sum(...items) {
+  if (items.length === 1 && Array.isArray(items[0]))
+    items = [...items[0]];
+  return items.reduce((a, b) => a + b)
 }
 
-//Using call and apply. The argument passed; which is an object will be the this keyword
+let numbers = [1, 2, 3, 5]
 
-// playVideo.call({
-//   name: 'ALAN'
-// }, 1, 2);
-// playVideo.apply({
-//   name: 'Alan'
-// }, [1, 2]); // in apply, the second argument must be an array
-// playVideo.bind({
-//   name: 'Carlos'
-// })(); // Use () to call the new function from bind.
-// playVideo();
+console.log(sum(1, 2, 3, 4));
+console.log(sum(numbers))
