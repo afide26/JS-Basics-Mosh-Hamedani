@@ -1,41 +1,23 @@
-//Lesson 7 - Error Handling
+//Lesson 7 - Global vs Local Scope
 
-const person = {
-  firstName: 'Alan',
-  lastName: 'Fidelino',
-  set fullName(value) {
-    //Error handling in the first line of the code block; defensive programming.
-    // if (typeof value !== 'string') return console.error(`The value must be a string`)
-    //Throwing an error or throw an exception. When the unexpected happens
-    if (typeof value !== 'string') {
-      throw new Error('The value must be a string');
-    }
+// {
+//   const message = "hi";
+// }
+// console.log(message);
 
-    const parts = value.split(' '); // convert the passed string to an array;
-    if (parts.length !== 2) {
-      throw new Error('Enter a first and last name!')
-    }
-    this.firstName = parts[0];
-    this.lastName = parts[1];
-  },
 
-  get fullName() {
-    return `${person.firstName} ${person.lastName}`;
+function start(message, name) {
+
+  if (message === "Hello") {
+    var greeting = message + ' ' + name;
   }
+  console.log(greeting); // greeting can not be accessed outside the if block;
 }
 
-//person.fullName = 'Carl Fidelino'; //Setter
 
-//use the try and catch
 
-try {
-  //try a statement for errors
-  person.fullName = 'Alan Fidelino';
-} catch (e) {
-  alert(e);
-}
-console.log(person) //Getter;
-
-//*** Take aways: */
-// When an exception is thrown, the next lines are not executed, exceptions can be done for multiple cases;
-//Try and catch to see if there are errors in the code execution;
+start("Hello", "Alan");
+//Result: Uncaught ReferencError: message is not defined
+// A scope of a variable or constant determines where that variable or constant
+// is accessible. When we declare a variable using 'let' or 'const', their scope
+// is limited to the code block in which they are defined.
