@@ -1,2 +1,2 @@
-# Mosh Hamedani's JavaScript for Beginners Course
-ALT-H1 =================================================
+Alt-H1 Mosh Hamedani's JavaScript for Beginners Course
+
