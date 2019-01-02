@@ -1,21 +1,24 @@
-//Lesson 4 - Default Parameters
-
-//Default parameters
-
-//Use case:  default interest using logical or
-function interest(principal, rate, years) {
-  //Use the logical or to use a default value if no argument is provided
-  rate = rate || 3.5;
-  years = years || 5;
-
-  return principal * rate / 100 * years;
+//Lesson 5 Getters and Setters
+const person = {
+  firstName: 'Alan',
+  lastName: 'Fidelino',
+  personFullName() { //Read only
+    return `${person.firstName} ${person.lastName}`
+  },
+  get fullName() { //Prefix the function with get
+    return `${person.firstName} ${person.lastName}`
+  },
+  set fullName(value) { //Prefix the function with get
+    const parts = value.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  }
 }
 
-//Use case:  using default params
-function interestParams(principal, rate = 3.5, years = 5) {
-  //Need to pass default values after the first param or use undefined if not using a predefined value;
-  return principal * rate / 100 * years;
-}
+person.fullName = "Carl Fidelino"
+console.log(person)
+console.log(person.personFullName()); //Read only
+console.log(person.fullName); //Getter, see the property was accessed.
 
-
-console.log(interestParams(10000));
+//getters - access properties of an object
+//setters - to change or mutate the values of properties of an object
