@@ -1,23 +1,20 @@
-//Lesson 7 - Global vs Local Scope
-
-// {
-//   const message = "hi";
-// }
-// console.log(message);
-
-
-function start(message, name) {
-
-  if (message === "Hello") {
-    var greeting = message + ' ' + name;
-  }
-  console.log(greeting); // greeting can not be accessed outside the if block;
+//Lesson 9 - Let vs Var
+//Difference with var vs let
+//Problems with var
+//var is function scoped
+//const and let are block scoped 
+function starVar() {
+  for (var i = 0; i < 5; i++)
+    console.log(i)
+  console.log(`i is still accessible outside the for loop ${i}`);
 }
 
+starVar();
 
+function start() {
+  for (let i = 0; i < 5; i++)
+    console.log(i)
+  console.error(`i is not accessible outside the for loop ${i}`);
+}
 
-start("Hello", "Alan");
-//Result: Uncaught ReferencError: message is not defined
-// A scope of a variable or constant determines where that variable or constant
-// is accessible. When we declare a variable using 'let' or 'const', their scope
-// is limited to the code block in which they are defined.
+start();
